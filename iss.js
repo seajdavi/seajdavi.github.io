@@ -36,8 +36,8 @@ function getCoords(url) {
                 toPct([prevLong, prevLat]);
             }
             else {
-                lat = Number(data['iss_position']['latitude']);
-                long = Number(data['iss_position']['longitude']);
+                lat = Number(data['latitude']);
+                long = Number(data['longitude']);
                 toPct([long, lat]);
             }
 
@@ -78,7 +78,8 @@ function updateDist() {
 }
 
 function main(){
-    getCoords('http://api.open-notify.org/iss-now.json');
+    getCoords('https://api.wheretheiss.at/v1/satellites/25544');
+    console.log('https://api.wheretheiss.at/v1/satellites/25544');
 }
 
 setInterval(main,5000);
