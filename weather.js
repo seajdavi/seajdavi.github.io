@@ -94,12 +94,12 @@ function update(weatherAndForecast) {
 
 
 function updateByZip(zip) {
-    var url = 'http://api.wunderground.com/api/214e2411900fbb2b/conditions/forecast/q/' + zip + '.json';
+    var url = 'https://api.wunderground.com/api/214e2411900fbb2b/conditions/forecast/q/' + zip + '.json';
     sendRequest(url)
 }
 
 function updateByGeo(lat, lon) {
-    var url = 'http://api.wunderground.com/api/214e2411900fbb2b/conditions/forecast/qforecast/q/' + lat + ',' + lon + '.json';
+    var url = 'https://api.wunderground.com/api/214e2411900fbb2b/conditions/forecast/qforecast/q/' + lat + ',' + lon + '.json';
     sendRequest(url);
 }
 
