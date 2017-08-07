@@ -19,7 +19,7 @@ function sendRequest(url) {
             // gets all desired data from json
             var weather = {};
             weather.loc = data.current_observation.display_location.full;
-            weather.icon = data.current_observation.icon_url;
+            weather.icon = 'https' + data.current_observation.icon_url.slice(4);
             weather.humidity = data.current_observation.relative_humidity;
             weather.wind = data.current_observation.wind_mph;
             weather.direction = data.current_observation.wind_dir;
@@ -30,7 +30,8 @@ function sendRequest(url) {
             var forecast = [];
             for (var i=1; i<4; i++){
                 var day = data.forecast.simpleforecast.forecastday[i];
-                forecast[i] = [day.date.weekday, day.high.fahrenheit, day.low.fahrenheit, day.conditions, day.icon_url];
+                forecast[i] = [day.date.weekday, day.high.fahrenheit, day.low.fahrenheit, day.conditions,
+                    'https' + day.icon_url.slice(4)];
             }
 
             // calls update with arrays containing desired info from json
