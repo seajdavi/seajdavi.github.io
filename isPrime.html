@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(function(){
+      $("#header").load("header.html");
+    });
+    </script>
+
+
+    <meta charset="UTF-8">
+    <title>isPrime</title>
+    <script type="text/javascript" src="isPrime.js"></script>
+</head>
+<body>
+    <div id="header"></div>
+
+
+<div class="container">
+    <div class="jumbotron">
+        <h2>Enter a whole number to see if it's prime</h2>
+        <input type="text" id="number"/>
+        <button class="btn btn-primary" onclick="clearResults(document.getElementById('number').value, 'single')">Go!</button>
+        <button class="btn btn-primary" onclick="clearResults(document.getElementById('number').value, 'range')">See results for all numbers in this range</button>
+        <p id="result"></p>
+    </div>
+</div>
+
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,31 @@
+.sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+.temp {
+    font-size: 850%;
+    margin: 50px 0px 0px 0px;
+
+    }
+
+
+.forecastImage {
+    float: right;
+    margin: 0px 10px 0px 0px;
+}
+
+.forecastDescription {
+    font-size: 150%;
+    /*color: dodgerblue;*/
+}
+
+.forecastHL {
+    font-size: 150%;
+}
+
+.forecastDay {
+    font-size: 250%;
+    font-weight: bold;
+    color: dodgerblue;
+}

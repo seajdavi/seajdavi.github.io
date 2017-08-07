@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(function(){
+      $("#header").load("header.html");
+    });
+    </script>
+
+
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <script type="text/javascript" src="weather.js"></script>
+    <link rel="stylesheet" type="text/css" href="weather.css" />
+</head>
+<body>
+    <div id="header"></div>
+
+<div class="container">
+    <h1 id="location" align="center"></h1>
+    <button onclick="geoFail()" class="btn btn-primary pull-right">Click to enter zip code</button>
+    <br>
+    <br>
+    <hr>
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h2 align="center">Forecast</h2>
+      <ul id="forecast" class="nav nav-pills nav-stacked">
+          <br>
+      </ul>
+
+    </div>
+
+      <div class="col-sm-4">
+          <h1 id="temperature" class="temp" align="center"></h1>
+      </div>
+
+      <div class="col-sm-5">
+          <img id="icon" width="150px" src="#" class="center-block" />
+          <h1 id ="description" align="center"></h1>
+      </div>
+
+      <div class="col-sm-9">
+          <br><br>
+      </div>
+
+      <div class="col-sm-3">
+          <h2 id="humidity"></h2>
+      </div>
+
+      <div class="col-sm-3">
+          <h2 id="wind"></h2>
+      </div>
+
+      <div class="col-sm-3">
+          <h2 id="uv"></h2>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+
+
+
+  </body>
+</html>

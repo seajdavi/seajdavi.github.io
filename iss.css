@@ -1,0 +1,19 @@
+.parent {
+    position: relative;
+    top: 0;
+    left: 0;
+
+}
+.image1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    max-height:100%;
+    max-width:100%;
+}
+.image2 {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    -webkit-transform: translate(-50%, -50%);
+}

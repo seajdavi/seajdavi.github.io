@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(function(){
+      $("#header").load("/Users/seandavis/Desktop/javascript/header.html");
+    });
+    </script>
+    <link rel="stylesheet" href="iss.css">
+
+
+    <meta charset="UTF-8">
+    <title>ISS</title>
+    <script type="text/javascript" src="iss.js"></script>
+</head>
+    <body onload="main()">
+    <div id="header"></div>
+
+
+<div class="container">
+    <div class="well">
+    <h3>International Space Station's Current Location</h3>
+    <p>This shows where the International Space Station is right now.
+    The ISS orbits the Earth at an altitude of 249 miles and moves at a speed of roughly 4.76 miles per second.</p>
+    <p>The map below is updated every 5 seconds.</p>
+	</div>
+    <br>
+    <p style="display:inline"class = "lead">Distance traveled since loading this page: </p>
+    <p style="display:inline"class = "lead" id="distance">0 miles</p>
+    <br>
+    <br>
+</div>
+
+<div class="container">
+    <div class="parent">
+        <img class="image1 img-thumbnail"  src="world.gif" />
+        <img class="image2" id="image2" src="iss.gif" />
+    </div>
+    <br>
+    <br>
+</div>
+
+
+
+
+</body>
+</html>
+

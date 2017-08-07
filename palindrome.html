@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(function(){
+      $("#header").load("header.html");
+    });
+    </script>
+
+
+    <meta charset="UTF-8">
+    <title>Palindrome</title>
+    <script type="text/javascript" src="palindrome.js"></script>
+</head>
+<body>
+    <div id="header"></div>
+
+
+<div class="container">
+    <div class="jumbotron">
+        <h2>Enter a string to see if it's a palindrome
+        <small>(Case Sensitive)</small>
+        </h2>
+        <input type="text" id="string"/>
+        <button class="btn btn-primary" onclick="updateHtml(document.getElementById('string').value)">Go!</button>
+        <p id="result"></p>
+    </div>
+</div>
+
+
+
+</body>
+</html>
+
+
