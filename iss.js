@@ -31,8 +31,8 @@ function getCoords(url) {
             //return([data['iss_position']['longitude'], data['iss_position']['latitude']]);
 
             if (prevLat === null && prevLong === null) {
-                prevLat = Number(data['iss_position']['latitude']);
-                prevLong = Number(data['iss_position']['longitude']);
+                prevLat = Number(data['latitude']);
+                prevLong = Number(data['longitude']);
                 toPct([prevLong, prevLat]);
             }
             else {
