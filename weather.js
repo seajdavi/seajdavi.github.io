@@ -56,6 +56,9 @@ function update(weatherAndForecast) {
     description.innerHTML = weather.description;
     uv.innerHTML = 'UV Index: ' + weather.uv;
 
+    // remove elements that may have already been created
+    document.getElementById('forecast').innerHTML = '';
+
     // forecast array should hold 3 days of info, each being an array of 5 items
     for (var i=1; i<forecast.length; i++) {
 
