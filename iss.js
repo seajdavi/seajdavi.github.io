@@ -3,6 +3,8 @@ var prevLong = null;
 var total_dist = 0;
 var lat = null;
 var long = null;
+var altitude;
+var speed;
 
 
 function moveIss(coords) {
@@ -27,8 +29,9 @@ function getCoords(url) {
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var data = JSON.parse(xmlhttp.responseText);
-            //console.log([data['iss_position']['longitude'], data['iss_position']['latitude']]);
-            //return([data['iss_position']['longitude'], data['iss_position']['latitude']]);
+
+            altitude = Number(data['altitude']) * 0.621371; // kilometers to miles
+            speed = Number(data['velocity'])  * 0.621371; // kilometers to miles
 
             if (prevLat === null && prevLong === null) {
                 prevLat = Number(data['latitude']);
@@ -71,9 +74,13 @@ function haversine(prevLat, prevLong, lat, long) {
 
 
 function updateDist() {
-    document.getElementById('distance').innerHTML = Math.round(total_dist) + ' miles';
+    document.getElementById('distance').innerHTML = 'Distance traveled since loading this page: ' + Math.round(total_dist) + ' miles';
     prevLong = long;
     prevLat = lat;
+
+    document.getElementById('altitude').innerHTML = 'Current Altitude: ' + Math.round(altitude) + ' miles';
+    document.getElementById('speed').innerHTML = 'Current Speed: ' + Math.round(speed) + ' mph ('+ (speed/3600).toFixed(2) + ' miles/sec)';
+    //document.getElementById('speed').innerHTML = speed.toFixed(2) + ' mph';
 
 }
 
@@ -82,4 +89,4 @@ function main(){
     console.log('https://api.wheretheiss.at/v1/satellites/25544');
 }
 
-setInterval(main,5000);
+setInterval(main,2500);

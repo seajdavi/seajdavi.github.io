@@ -1,0 +1,23 @@
+
+
+.item {
+  font-size: x-large;
+}
+
+.small {
+  max-width: 70%
+}
+
+
+.jumbotron {
+  text-align: center;
+}
+
+.jumbotron .btn {
+  padding: 14px 24px;
+  font-size: 21px;
+}
+
+/*.clickedWell {*/
+
+/*}*/

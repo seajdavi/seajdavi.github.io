@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(function(){
+      $("#header").load("header.html");
+    });
+    </script>
+    <link rel="stylesheet" href="todo.css">
+
+
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+    <script type="text/javascript" src="todo.js"></script>
+</head>
+    <body onload="getItems()">
+    <div id="header"></div>
+
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="container small">
+    <div class="jumbotron">
+      <div class="container small">
+        <h1>To Do List</h1>
+          <br>
+
+          <div class="col-md-8 col-md-offset-2">
+          <form id="myForm">
+              <div class="form-group">
+                <input type="text" class="form-control" id="itemInput" placeholder="New Item">
+              </div>
+
+              <button type="submit" class="btn btn-primary" onclick="addItem()">Add</button>
+            </form>
+      </div>
+      </div>
+
+    </div>
+      </div>
+
+
+    <div class="container small" id="myDiv">
+    </div>
+
+
+  </body>
+</html>
+
+<!--       <div class="well clearfix well-sm">Small Well
+          <button class="btn btn-danger btn-sm pull-right">Remove</button>
+      </div>
+-->
