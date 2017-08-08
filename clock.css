@@ -13,7 +13,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    /*transform: translateY(-0.25%);*/
+    /*transform: translateY(1.5%);*/
 }
 
 .hand {
@@ -24,16 +24,15 @@
     top: 50%;
     transform-origin: 100%; /* rotate on its end instead of its center */
     transform: rotate(90deg); /* so it starts vertical instead of horizontal */
-    transition: all 0.05s;
-    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 }
 
 .hour {
+    left: 10%;
     width: 40%;
     /*transform: translateX(-20%);*/
-    -webkit-transform: translate(20%,20%); /** Chrome & Safari **/
-
+    /*-webkit-transform: translate(20%,20%); !** Chrome & Safari **!*/
 }
+
 
 .second {
     height: 0.5%;
@@ -48,5 +47,51 @@
     height:15px;
     border-radius:50%;
     width:15px;
-    -webkit-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%); /* chrome and safari */
+    -moz-transform: translate(-50%, -50%); /* firefox */
+}
+
+.three {
+    position: absolute;
+    width: 6%;
+    height: 1%;
+    background: white;
+    left: 100%;
+    bottom: 49%;
+
+
+}
+
+.six {
+    position: absolute;
+    width: 6%;
+    height: 1%;
+    background: white;
+    top: 102.3%;
+    left: 47%;
+    transform: rotate(90deg);
+
+
+}
+
+.nine {
+    position: absolute;
+    width: 6%;
+    height: 1%;
+    background: white;
+    right: 100%;
+    bottom:49%;
+
+}
+
+.twelve {
+    position: absolute;
+    width: 6%;
+    height: 1%;
+    background: white;
+    left: 47%;
+    bottom: 102.3%;
+    transform: rotate(90deg);
+
+
 }
