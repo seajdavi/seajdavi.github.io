@@ -86,7 +86,6 @@ function updateDist() {
 
 function main(){
     getCoords('https://api.wheretheiss.at/v1/satellites/25544');
-    console.log('https://api.wheretheiss.at/v1/satellites/25544');
 }
 
 setInterval(main,2500);

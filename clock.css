@@ -1,0 +1,52 @@
+.clock {
+    position: relative;
+    margin: 50px auto;
+    background-color: black;
+    /*border:1px solid red;*/
+    height:500px;
+    border-radius:50%;
+    width:500px;
+    padding: 2%;
+}
+
+.clockFace {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*transform: translateY(-0.25%);*/
+}
+
+.hand {
+    position: absolute;
+    width: 50%;
+    height: 1%;
+    background: white;
+    top: 50%;
+    transform-origin: 100%; /* rotate on its end instead of its center */
+    transform: rotate(90deg); /* so it starts vertical instead of horizontal */
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hour {
+    width: 40%;
+    /*transform: translateX(-20%);*/
+    -webkit-transform: translate(20%,20%); /** Chrome & Safari **/
+
+}
+
+.second {
+    height: 0.5%;
+    background: red;
+}
+
+.center {
+    position: absolute;
+    margin: 50%;
+    background-color: white;
+    /*border:1px solid red;*/
+    height:15px;
+    border-radius:50%;
+    width:15px;
+    -webkit-transform: translate(-50%, -50%);
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(function(){
+      $("#header").load("header.html");
+    });
+    </script>
+    <link rel="stylesheet" href="clock.css">
+
+
+    <meta charset="UTF-8">
+    <title>ISS</title>
+    <script type="text/javascript" src="clock.js"></script>
+</head>
+
+<body onload="getElements(); setTime()">
+
+    <div id="header"></div>
+
+
+    <div class="clock">
+        <div class="clockFace">
+            <div id="hourHand" class="hand hour"></div>
+            <div id="minuteHand" class="hand minute"></div>
+            <div id="secondHand" class="hand second"></div>
+            <div class="center"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+
