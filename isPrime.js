@@ -1,18 +1,29 @@
 function isPrime (num) {
     var result = document.getElementById('result');
 
-    if (num % 1 !== 0) {
-        result.innerHTML = 'Please enter a whole number';
+
+    if ((isNaN(num)) || (num === '')) {
+        result.innerHTML = 'Please enter a number';
         return false;
     }
 
-    if (num < 1) {
-      result.innerHTML = 'Negative numbers can not be prime';
+    else if (num == 1 || num ==0) {
+    result.innerText = num + ' can not be a prime number';
+    return false;
     }
 
-    if (num == 1) {
-        result.innerText = '1 can not be a prime number';
+    else if (num < 0) {
+      result.innerHTML = 'Negative numbers can not be prime';
+      return false;
     }
+
+    else if (num % 1 !== 0) {
+    result.innerHTML = 'Please enter a whole number';
+    return false;
+    }
+
+
+
 
   else {
       for(var i=2; i<num; i++) {
