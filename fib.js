@@ -1,7 +1,11 @@
-// freezes when letters are entered
-
 function fib(num) {
-    if (num == 0) {
+
+    if ((isNaN(num)) || (num === '')) {
+        document.getElementById('result').innerHTML = 'Please enter a number';
+        return false;
+    }
+
+    else if (num == 0) {
         document.getElementById('result').innerHTML += String(0) + '<br>';
         return 0;
     }
@@ -16,8 +20,6 @@ function fib(num) {
         var temp;
 
         while (position != num) {
-            console.log(position);
-            console.log(num);
             temp = prevNum;
             prevNum = curNum;
             curNum += temp;

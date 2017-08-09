@@ -21,8 +21,7 @@ function fizzBuzz (num) {
     else {
         result.innerHTML += num + ': None<br>';
     }
-
-    }
+}
 
 
 function clearResults(num, type) {
@@ -34,8 +33,6 @@ function clearResults(num, type) {
     else {
         fbRange(num);
     }
-
-
 }
 
 

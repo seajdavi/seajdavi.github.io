@@ -1,0 +1,31 @@
+body {
+    padding-bottom: 400px;
+}
+
+.name {
+    font-size: 500%;
+    font-weight: 600;
+}
+
+.index-description {
+    font-size: 200%;
+}
+
+
+.links:link, .links:visited {
+    border-radius: 25px;
+    background-color: white;
+    color: black;
+    border: 2px solid dodgerblue;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.links:hover, .links:active {
+    background-color: dodgerblue;
+    color: white;
+}

@@ -24,9 +24,7 @@ function isPrime (num) {
     result.innerHTML += num + ' is prime<br>';
     return true;
   }
-
 }
-
 
 
 function clearResults(num, type) {

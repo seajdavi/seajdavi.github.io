@@ -1,6 +1,5 @@
 .sidenav {
-      /*background-color: #f1f1f1;*/  
-    background-color: lightgray;
+    background: rgba(211, 211, 211, 0.6);
     border-radius: 5px;
     height: 100%;
     margin-left: 10px;
@@ -30,7 +29,6 @@
 .forecastDay {
     font-size: 250%;
     font-weight: bold;
-    /*color: dodgerblue;*/
 }
 
 .test {
