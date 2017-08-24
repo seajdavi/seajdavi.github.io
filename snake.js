@@ -3,7 +3,7 @@ var game;
 var snakeX = 2;
 var snakeY = 2;
 var height = 20;
-var width = 20;
+var width = 37;
 var interval = 125;
 var increment = 1;
 

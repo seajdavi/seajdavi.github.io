@@ -13,14 +13,14 @@ td {
 }
 
 .snake {
-    background-color: black;
+    background-color: green;
     border-style: solid;
     border-color: white;
     border-width: thin;
 }
 
 .wall {
-    background-color: green;
+    background-color: black;
     border-style: solid;
     border-color: white;
     border-width: thin;
