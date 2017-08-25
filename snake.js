@@ -1,5 +1,9 @@
 var game;
 var snapeMode = false;
+var isPlaying = false;
+var snapeVoice = false;
+var audio = new Audio('snapeAssets/hp_music.mp3');
+var frequency = 2;
 
 var snakeX = 2;
 var snakeY = 2;
@@ -149,9 +153,10 @@ function update() {
         createFruit();
         length+=increment;
 
-        if (snapeMode == true) {
-            if (random(1,3) == 1) {
-                var audio = new Audio('snapeAssets/snapeAudio/snape' + random(1,8) + '.m4a');
+        if (snapeMode && snapeVoice) {
+            console.log(frequency);
+            if (random(1,frequency) == 1) {
+                var audio = new Audio('snapeAssets/snapeAudio/snape' + random(1,7) + '.m4a');
                 audio.play();
             }
         }
@@ -187,9 +192,15 @@ function changeSpeed(speed) {
 
 function restart() {
     var button = document.createElement("BUTTON");
-    button.className = "btn btn-primary btn-lg";
     button.innerHTML = 'Restart';
     button.onclick = function(){refreshPage()};
+
+    if (snapeMode) {
+        button.className = "btn btn-danger btn-lg";
+    }
+    else{
+        button.className = "btn btn-primary btn-lg";
+    }
 
     document.getElementById('restart').appendChild(button);
 }
@@ -210,13 +221,13 @@ function refreshPage(){
     run();
 }
 
-
 function snape() {
     if (snapeMode) {
         return false;
     }
 
     snapeMode = true;
+    snapeVoice = true;
 
     // well at the top of the page
     var well = document.getElementById('mainWell');
@@ -237,8 +248,8 @@ function snape() {
     gameArea.style.backgroundSize = "100% auto";
 
     // harry potter theme music
-    var audio = new Audio('snapeAssets/hp_music.mp3');
     audio.play();
+    isPlaying = true;
 
     // changes the speed selector
     document.getElementById('menu1').className = 'btn btn-danger snape-button dropdown-toggle';
@@ -249,6 +260,56 @@ function snape() {
 
     // removes SNAPE MODE button
     document.getElementById('snape').remove();
+
+    // toggle music button
+    var button = document.createElement("BUTTON");
+    button.id = 'musicToggle';
+    button.className = "btn btn-danger";
+    button.innerHTML = 'Turn Music Off';
+    button.onclick = function(){toggleMusic()};
+
+    document.getElementById('music').appendChild(button);
+
+    // toggle snape voice button
+    var button = document.createElement("BUTTON");
+    button.id = 'voiceToggle';
+    button.className = "btn btn-danger";
+    button.innerHTML = "Turn Snape's Voice Off";
+    button.onclick = function(){toggleVoice()};
+
+    document.getElementById('snapeVoice').appendChild(button);
+
+    // show frequencey selector
+    document.getElementById('frequency').style.display = 'inline-block';
+
+}
+
+
+function toggleMusic() {
+    if (isPlaying) {
+        audio.pause();
+        document.getElementById('musicToggle').innerHTML = 'Turn Music On';
+    }
+    else {
+        audio.play();
+        document.getElementById('musicToggle').innerHTML = 'Turn Music Off';
+    }
+    isPlaying = !isPlaying;
+}
+
+
+function toggleVoice() {
+    if (snapeVoice) {
+        document.getElementById('voiceToggle').innerHTML = "Turn Snape's Voice On";
+    }
+    else {
+        document.getElementById('voiceToggle').innerHTML = "Turn Snape's Voice Off";
+    }
+    snapeVoice = !snapeVoice;
+}
+
+function changeFrequency(freq) {
+    frequency = freq;
 }
 
 

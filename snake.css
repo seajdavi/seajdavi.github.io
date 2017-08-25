@@ -3,9 +3,10 @@
     src: url(snapeAssets/LUMOS.TTF);
 }
 
-/*div {
-    font-family: myFirstFont;
-}*/
+#speed {display:inline-block;}
+#music {display:inline-block;}
+#snapeVoice {display:inline-block;}
+#frequency {display:inline-block;}
 
 body {
     padding-bottom: 100px;

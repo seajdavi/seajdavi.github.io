@@ -35,14 +35,27 @@
                     <li onclick="changeSpeed(125)" role="presentation"><a role="menuitem">Medium</a></li>
                     <li onclick="changeSpeed(80)" role="presentation"><a role="menuitem">Fast</a></li>
                 </ul>
+
                 <button class="btn btn-danger snape-button" style="font-family:hp" id="snape" onclick="snape()">SNAPE MODE</button>
+                <div id = 'music'></div>
+                <div id = 'snapeVoice'></div>
+
+                <div id='frequency' class="dropdown" style="display:none;">
+                    <button class="btn btn-danger dropdown-toggle" id="menu2" type="button" data-toggle="dropdown">Select Frequency of Snape's Voice
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu2">
+                        <li onclick="changeFrequency(1)" role="presentation"><a role="menuitem">Every Time</a></li>
+                        <li onclick="changeFrequency(2)" role="presentation"><a role="menuitem">Frequently</a></li>
+                        <li onclick="changeFrequency(5)" role="presentation"><a role="menuitem">Rarely</a></li>
+                        <li onclick="changeFrequency(-1)" role="presentation"><a role="menuitem">Never</a></li>
+                    </ul>
             </div>
             <br>
         </div>
 
 
 
-
+        <br><br>
         <div class="text-center" id="restart"></div>
         <br>
         <div id="game" class = 'game' align='center'></div>
