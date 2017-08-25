@@ -156,7 +156,7 @@ function update() {
         if (snapeMode && snapeVoice) {
             console.log(frequency);
             if (random(1,frequency) == 1) {
-                var audio = new Audio('snapeAssets/snapeAudio/snape' + random(1,7) + '.m4a');
+                var audio = new Audio('snapeAssets/snapeAudio/snape' + random(1,10) + '.m4a');
                 audio.play();
             }
         }
