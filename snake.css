@@ -43,20 +43,17 @@ td .content {
 
 .snake {
     background-color: green;
-    border-style: solid;
-    border-color: white;
-    border-width: thin;
+    outline:thin solid white;
 }
 
 .wall {
     background-color: #5d5d5d;
-    border-style: solid;
-    border-color: white;
-    border-width: thin;
+    outline:thin solid white;
 }
 
 .fruit {
     background-color: red;
+    outline:thin solid white;
 }
 
 
@@ -69,23 +66,17 @@ td .content {
 .snape {
     background-image: url('snapeAssets/snapePics/snape.jpg');
     background-size : 100% auto;
-    border-style: solid;
-    border-color: white;
-    border-width: thin;
+    outline:thin solid white;
 }
 
 .snape-tail {
     background-color: black;
-    border-style: solid;
-    border-color: white;
-    border-width: thin;
+    outline:thin solid white;
 }
 
 .harry {
     /*background-color: red;*/
     background-image: url('snapeAssets/snapePics/harry.jpg');
     background-size : 100% auto;
-    border-style: solid;
-    border-color: white;
-    border-width: thin;
+    outline:thin solid white;
 }

@@ -240,6 +240,9 @@ function snape() {
     var audio = new Audio('snapeAssets/hp_music.mp3');
     audio.play();
 
+    // changes the speed selector
+    document.getElementById('menu1').className = 'btn btn-danger snape-button dropdown-toggle';
+
     // changes the snake and fruit
     document.getElementById(fX+'-'+fY).setAttribute('class', 'harry');
     document.getElementById(snakeX+'-'+snakeY).setAttribute('class', 'snape');
