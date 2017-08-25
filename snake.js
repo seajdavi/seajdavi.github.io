@@ -1,18 +1,21 @@
 var game;
+var snapeMode = false;
 
 var snakeX = 2;
 var snakeY = 2;
-var height = 20;
-var width = 37;
+var height = 16;
+var width = 30;
 var interval = 125;
 var increment = 1;
 
 var tailX = [snakeX];
 var tailY = [snakeY];
 var fX, fY;
+var length = 0;
 var running = false;
 var gameOver = false;
 var direction = -1
+var tempdir = 2;
 var int;
 
 function run() {
@@ -30,6 +33,7 @@ function init() {
 
 function createMap() {
     var table = document.createElement('TABLE');
+    table.className = 'game-table';
 
     for (var y=0; y<height; y++) {
         var row = table.insertRow(y);
@@ -51,7 +55,13 @@ function createMap() {
 
 
 function createSnake() {
-    document.getElementById(snakeX+'-'+snakeY).setAttribute('class', 'snake');
+    if (snapeMode) {
+        document.getElementById(snakeX+'-'+snakeY).setAttribute('class', 'snape');
+    }
+    else {
+        document.getElementById(snakeX+'-'+snakeY).setAttribute('class', 'snake');
+
+    }
 }
 
 
@@ -65,7 +75,12 @@ function createFruit () {
             found = true;
         }
     }
-    document.getElementById(fruitX+'-'+fruitY).setAttribute('class', 'fruit');
+    if (snapeMode) {
+        document.getElementById(fruitX+'-'+fruitY).setAttribute('class', 'harry');
+    }
+    else {
+        document.getElementById(fruitX+'-'+fruitY).setAttribute('class', 'fruit');
+    }
     fX = fruitX;
     fY = fruitY;
 }
@@ -89,11 +104,17 @@ function gameLoop() {
 
 function update() {
     direction = tempdir;
-    document.getElementById(fX+'-'+fY).setAttribute('class', 'fruit');
+    if (snapeMode) {
+        document.getElementById(fX+'-'+fY).setAttribute('class', 'harry');
+    }
+    else {
+        document.getElementById(fX+'-'+fY).setAttribute('class', 'fruit');
+    }
     updateTail();
 
     //sets the last segment of the tail to blank  before moving the snake
     document.getElementById(tailX[length]+'-'+tailY[length]).setAttribute('class', 'blank');
+
     //updates the position of the snake according to the direction
     if(direction == 0)
         snakeY--;
@@ -104,8 +125,12 @@ function update() {
     else if(direction == 2)
         snakeX++;
     //draws the head of the snake on the tail
-    document.getElementById(snakeX+'-'+snakeY).setAttribute('class', 'snake');
-
+    if (snapeMode) {
+        document.getElementById(snakeX+'-'+snakeY).setAttribute('class', 'snape');
+    }
+    else {
+        document.getElementById(snakeX+'-'+snakeY).setAttribute('class', 'snake');
+    }
     // snake hits itself
     for(var i = tailX.length-1; i >=0; i--) {
         if(snakeX == tailX[i] && snakeY == tailY[i]) {
@@ -123,6 +148,13 @@ function update() {
     else if(snakeX == fX && snakeY == fY) {
         createFruit();
         length+=increment;
+
+        if (snapeMode == true) {
+            if (random(1,3) == 1) {
+                var audio = new Audio('snapeAssets/snapeAudio/snape' + random(1,9) + '.m4a');
+                audio.play();
+            }
+        }
     }
 }
 
@@ -134,6 +166,13 @@ function updateTail() {
     }
     tailX[0] = snakeX;
     tailY[0] = snakeY;
+
+    if (snapeMode) {
+        document.getElementById(snakeX+'-'+snakeY).setAttribute('class', 'snape-tail');
+    }
+    else {
+        document.getElementById(snakeX+'-'+snakeY).setAttribute('class', 'snake');
+    }
 }
 
 
@@ -147,8 +186,6 @@ function changeSpeed(speed) {
 }
 
 function restart() {
-
-    // create <button>
     var button = document.createElement("BUTTON");
     button.className = "btn btn-primary btn-lg";
     button.innerHTML = 'Restart';
@@ -159,7 +196,56 @@ function restart() {
 
 
 function refreshPage(){
-    window.location.reload();
+    clearInterval(int);
+    snakeX = 2;
+    snakeY = 2;
+    tailX = [snakeX];
+    tailY = [snakeY];
+    length = 0;
+    document.getElementById('game').innerHTML = '';
+    document.getElementById('restart').innerHTML = '';
+    running = false;
+    gameOver = false;
+    tempdir = 2;
+    run();
+}
+
+
+function snape() {
+    if (snapeMode) {
+        return false;
+    }
+
+    snapeMode = true;
+
+    // well at the top of the page
+    var well = document.getElementById('mainWell');
+    well.style.backgroundColor = "#000000";
+    well.style.color = "#aaaaaa";
+    well.style.fontFamily = 'hp';
+
+    // page background image
+    document.body.style.backgroundImage = 'url(snapeAssets/snapePics/snape_bg3.jpg)';
+    document.body.style.backgroundSize = "100% auto";
+
+    // changes title from SNAKE to SNAKE
+    document.getElementById('title').innerHTML = 'SNAPE';
+
+    // hogwarts background inside game border
+    var gameArea = document.getElementById('game');
+    gameArea.style.backgroundImage = 'url(snapeAssets/snapePics/hp_background.jpg)';
+    gameArea.style.backgroundSize = "100% auto";
+
+    // harry potter theme music
+    var audio = new Audio('snapeAssets/hp_music.mp3');
+    audio.play();
+
+    // changes the snake and fruit
+    document.getElementById(fX+'-'+fY).setAttribute('class', 'harry');
+    document.getElementById(snakeX+'-'+snakeY).setAttribute('class', 'snape');
+
+    // removes SNAPE MODE button
+    document.getElementById('snape').remove();
 }
 
 
@@ -168,18 +254,22 @@ window.addEventListener("keydown", function key(event) {
     var key = event.keyCode;
     if(direction != -1 && (key == 119 || key == 87 || key == 38)) {
         tempdir = 0;
+        running = true;
     }
     // down
     else if(direction != 0 && (key == 115 || key == 83 || key == 40)) {
         tempdir = -1;
+        running = true;
     }
     // left
     else if(direction != 2 && (key == 97 || key == 65 || key == 37)) {
         tempdir = 1;
+        running = true;
     }
     // right
     else if(direction != 1 && (key == 100 || key == 68 || key == 39)) {
         tempdir = 2;
+        running = true;
     }
     // space
     else if(key == 32) {

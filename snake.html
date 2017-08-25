@@ -21,22 +21,23 @@
 
 
     <div class="container">
-        <div class="well">
-        <h1 align='center'>SNAKE</h1>
+        <div id="mainWell" class="well">
+            <h1 id = 'title' align='center'>SNAKE</h1>
 
-        <br>
-        <p class = "lead">Use the arrow keys or WASD to move</p>
-        <p class = "lead">Press Space Bar to pause and resume</p>
-        <p class = "lead">The game starts paused, so press the space bar and then start moving to begin</p>
+            <br>
+            <p class = "lead">Use the arrow keys or WASD to move</p>
+            <p class = "lead">Press Space Bar to pause and resume</p>
             <div id="speed" class="dropdown">
-                <button class="btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Select Speed
+                <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Select Speed
                 <span class="caret"></span></button>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
                     <li onclick="changeSpeed(250)" role="presentation"><a role="menuitem">Slow</a></li>
                     <li onclick="changeSpeed(125)" role="presentation"><a role="menuitem">Medium</a></li>
                     <li onclick="changeSpeed(80)" role="presentation"><a role="menuitem">Fast</a></li>
                 </ul>
+                <button class="btn btn-danger snape-button" style="font-family:hp" id="snape" onclick="snape()">SNAPE MODE</button>
             </div>
+            <br>
         </div>
     </div>
 
@@ -44,7 +45,7 @@
 
     <div class="text-center" id="restart"></div>
     <br>
-    <div id="game" align='center'></div>
+    <div id="game" class = 'game' align='center'></div>
 
 </body>
 </html>
