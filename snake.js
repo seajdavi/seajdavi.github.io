@@ -151,7 +151,7 @@ function update() {
 
         if (snapeMode == true) {
             if (random(1,3) == 1) {
-                var audio = new Audio('snapeAssets/snapeAudio/snape' + random(1,9) + '.m4a');
+                var audio = new Audio('snapeAssets/snapeAudio/snape' + random(1,8) + '.m4a');
                 audio.play();
             }
         }
