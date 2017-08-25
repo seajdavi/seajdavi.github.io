@@ -283,10 +283,10 @@ function snape() {
     document.getElementById('frequency').style.display = 'inline-block';
 
     // font is dumb
-    document.getElementById('p1').innerHTML = 'Use the arrov keys or VASD to mowe';
-    document.getElementById('speed1').innerHTML = '<a role="menuitem">Slov</a>';
-    document.getElementById('freq1').innerHTML = '<a role="menuitem">Ewery Time</a>';
-    document.getElementById('freq4').innerHTML = '<a role="menuitem">Newer</a>';
+    // document.getElementById('p1').innerHTML = 'Use the arrov keys or VASD to mowe';
+    // document.getElementById('speed1').innerHTML = '<a role="menuitem">Slov</a>';
+    // document.getElementById('freq1').innerHTML = '<a role="menuitem">Ewery Time</a>';
+    // document.getElementById('freq4').innerHTML = '<a role="menuitem">Newer</a>';
 
 }
 
