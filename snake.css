@@ -34,6 +34,14 @@ td .content {
   right: 0;
 }
 
+.btn-primary {
+    background-color: #6497b1 !important;
+}
+
+/*.well {
+    background-color: #03396c !important;
+    color: #FFFFFF;
+}*/
 
 .game-table {
     width: 100%;

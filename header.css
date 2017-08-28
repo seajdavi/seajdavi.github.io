@@ -1,4 +1,11 @@
 body {
-    background-image: url('background-paper.jpg');
-    background-size : 100% auto
+    /*background-image: url('background-paper.jpg');
+    background-size : 100% auto*/
+    background-color: #FDFDFD;
+    /*background-color: #DCDCDC;*/
+}
+
+.navbar-inverse {
+    /*background-color: blue !important;
+    border-color: green !important;*/
 }

@@ -3,7 +3,7 @@ var snapeMode = false;
 var isPlaying = false;
 var snapeVoice = false;
 var audio = new Audio('snapeAssets/hp_music.mp3');
-var frequency = 2;
+var frequency = 5;
 
 var snakeX = 2;
 var snakeY = 2;

@@ -19,7 +19,7 @@ function sendRequest(url) {
             // gets all desired data from json
             var weather = {};
             weather.loc = data.current_observation.display_location.full;
-            weather.icon = 'https' + data.current_observation.icon_url.slice(4);
+            weather.icon = data.current_observation.icon;
             weather.humidity = data.current_observation.relative_humidity;
             weather.wind = data.current_observation.wind_mph;
             weather.direction = data.current_observation.wind_dir;
@@ -31,7 +31,7 @@ function sendRequest(url) {
             for (var i=1; i<4; i++){
                 var day = data.forecast.simpleforecast.forecastday[i];
                 forecast[i] = [day.date.weekday, day.high.fahrenheit, day.low.fahrenheit, day.conditions,
-                    'https' + day.icon_url.slice(4)];
+                    day.icon];
             }
 
             // calls update with arrays containing desired info from json
@@ -52,7 +52,7 @@ function update(weatherAndForecast) {
     humidity.innerHTML = 'Humidity: ' + weather.humidity;
     wind.innerHTML = 'Wind: ' + weather.wind + ' mph ' + weather.direction;
     temp.innerHTML = weather.temp + '&#8457;';
-    icon.src = weather.icon;
+    icon.src = "dist/icons/white/png/256x256/" + weather.icon + ".png";
     description.innerHTML = weather.description;
     uv.innerHTML = 'UV Index: ' + weather.uv;
 
@@ -71,8 +71,7 @@ function update(weatherAndForecast) {
         // adds data to elements
         day.appendChild(document.createTextNode(forecast[i][0]));
         forecastDescription.appendChild(document.createTextNode(forecast[i][3]));
-        // day.appendChild(document.createTextNode(forecast[i][4]));
-        pic.src = forecast[i][4];
+        pic.src = "dist/icons/white/png/128x128/" + forecast[i][4] + ".png";
         high.appendChild(document.createTextNode('High: ' + forecast[i][1]));
         low.appendChild(document.createTextNode('Low: ' + forecast[i][2]));
         high.innerHTML+='&#8457;';
@@ -92,7 +91,7 @@ function update(weatherAndForecast) {
         forecastHtml.appendChild(forecastDescription);
         forecastHtml.appendChild(high);
         forecastHtml.appendChild(low);
-        forecastHtml.innerHTML += '<hr>';
+        forecastHtml.innerHTML += '<br><hr>';
     }
 }
 
@@ -136,4 +135,3 @@ window.onload = function () {
         geoFail();
     }
 };
-

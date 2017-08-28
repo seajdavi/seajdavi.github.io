@@ -1,22 +1,27 @@
 body {
-    padding-bottom: 400px;
+    padding-bottom: 200px;
+}
+
+.jumbotron{
+color: #FFFFFF !important;
+background-color: #03396c !important;
 }
 
 .name {
-    font-size: 500%;
-    font-weight: 600;
+    font-size: 700% !important;
+    font-weight: 600 !important;
 }
 
 .index-description {
-    font-size: 200%;
+    font-size: 200% !important;
 }
 
 
 .links:link, .links:visited {
     border-radius: 25px;
-    background-color: white;
+    background-color: #DCDCDC;
     color: black;
-    border: 2px solid dodgerblue;
+    border: 2px solid #6497b1;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -26,6 +31,6 @@ body {
 }
 
 .links:hover, .links:active {
-    background-color: dodgerblue;
+    background-color: #6497b1;
     color: white;
 }

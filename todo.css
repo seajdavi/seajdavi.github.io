@@ -11,6 +11,9 @@
 
 .jumbotron {
   text-align: center;
+  color: #FFFFFF !important;
+  background-color: #03396c !important;
+
 }
 
 .jumbotron .btn {
@@ -18,6 +21,10 @@
   font-size: 21px;
 }
 
-/*.clickedWell {*/
+.well {
+    /*background-color: #011f4b !important;*/
+}
 
-/*}*/
+.btn-primary {
+    background-color: #6497b1 !important;
+}
