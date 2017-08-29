@@ -1,3 +1,7 @@
+body{
+    background-color: #03396c !important;
+}
+
 .sidenav {
     /*background: rgba(211, 211, 211, 0.6);*/
     background: #011f4b;
@@ -17,7 +21,7 @@
 
 .forecastImage {
     float: right;
-    margin: 0px 10px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
 
 .forecastDescription {
