@@ -2,6 +2,10 @@ body {
     padding-bottom: 200px;
 }
 
+.navbar-inverse {
+    margin-bottom: 0 !important;
+}
+
 .jumbotron{
 color: #FFFFFF !important;
 background-color: #03396c !important;
